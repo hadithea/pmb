@@ -20,6 +20,8 @@ class QuestionBankResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
+    protected static string|\UnitEnum|null $navigationGroup = 'Bank Soal & Ujian Online';
+
     public static function form(Schema $schema): Schema
     {
         return QuestionBankForm::configure($schema);

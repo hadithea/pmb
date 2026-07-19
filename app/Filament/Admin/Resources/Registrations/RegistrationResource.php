@@ -24,6 +24,8 @@ class RegistrationResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
+    protected static string|\UnitEnum|null $navigationGroup = 'Pendaftaran Online & Upload Berkas';
+
     public static function form(Schema $schema): Schema
     {
         return RegistrationForm::configure($schema);

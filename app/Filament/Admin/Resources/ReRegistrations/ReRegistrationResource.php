@@ -20,6 +20,8 @@ class ReRegistrationResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
+    protected static string|\UnitEnum|null $navigationGroup = 'Kelulusan & Daftar Ulang';
+
     public static function form(Schema $schema): Schema
     {
         return ReRegistrationForm::configure($schema);

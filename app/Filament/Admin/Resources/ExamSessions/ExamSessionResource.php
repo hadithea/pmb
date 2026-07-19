@@ -7,6 +7,7 @@ use App\Filament\Admin\Resources\ExamSessions\Pages\EditExamSession;
 use App\Filament\Admin\Resources\ExamSessions\Pages\ListExamSessions;
 use App\Filament\Admin\Resources\ExamSessions\Schemas\ExamSessionForm;
 use App\Filament\Admin\Resources\ExamSessions\Tables\ExamSessionsTable;
+use App\Filament\Admin\Resources\ExamSessions\RelationManagers\ExamParticipantsRelationManager;
 use App\Models\ExamSession;
 use BackedEnum;
 use Filament\Resources\Resource;
@@ -19,6 +20,8 @@ class ExamSessionResource extends Resource
     protected static ?string $model = ExamSession::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+
+    protected static string|\UnitEnum|null $navigationGroup = 'Bank Soal & Ujian Online';
 
     public static function form(Schema $schema): Schema
     {
@@ -33,7 +36,7 @@ class ExamSessionResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            ExamParticipantsRelationManager::class,
         ];
     }
 
